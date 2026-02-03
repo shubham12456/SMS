@@ -84,38 +84,18 @@
 
   <script>
 
-function closeEye(){
-            let mkey = document.getElementById('mkey').style.display = "none";
-            let closeEye = document.getElementById('mkeyclose').style.display = "block";
-        }
+function loginDemo() {
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
 
-        function openEye(){
-            let openEye = document.getElementById('mkey').style.display = "block";
-            let hidecloseEye = document.getElementById('mkeyclose').style.display = "none";
-        }
-    $(document).ready(function() {
-  $('#loginForm').submit(function(event) {
-    event.preventDefault();
+  if (username === "" || password === "") {
+    alert("Please enter username and password");
+    return;
+  }
 
-    var username = $('#username').val();
-    var password = $('#password').val();
-
-    $.ajax({
-      url: '/login',
-      type: 'POST',
-      data: { username: username, password: password },
-      success: function(response) {
-        // Redirect to the student management system
-        window.location.href = '/dashboard.html';
-      },
-      error: function(xhr) {
-        // Show error message
-        alert(xhr.responseText);
-      }
-      
-    });
-  });
-});
+  alert("Demo Login Successful ✅");
+  window.location.href = "dashboard.html";
+}
 
   </script>
 </body>
